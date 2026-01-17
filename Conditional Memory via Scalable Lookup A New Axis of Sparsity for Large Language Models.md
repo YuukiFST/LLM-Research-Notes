@@ -1,7 +1,5 @@
 Reference: https://www.arxiv.org/pdf/2601.07372
 
-# Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models
-
 # Memória Condicional em LLMs: O Paradigma Engram e a Nova Dimensão de Esparsidade
 
 ### Executive Summary
