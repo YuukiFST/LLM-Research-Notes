@@ -1,7 +1,5 @@
 Reference: https://arxiv.org/pdf/2501.12948
 
-
-
 # DeepSeek-R1: A Revolução do Raciocínio via Reinforcement Learning Puro
 
 ## Executive Summary
@@ -65,7 +63,7 @@ O **DeepSeek-R1** representa um salto significativo na pesquisa de LLMs de códi
 
 ***
 
-## Prompt Improvement Mode
+## 🛠️ Prompt Improvement Mode
 
 Após análise do documento, identificou-se que o artigo contém **heurísticas críticas de engenharia de prompt**. Especificamente, o documento menciona que modelos de raciocínio (como o DeepSeek-R1) performam melhor em configurações **Zero-Shot** (descrição direta do problema) e são sensíveis a exemplosFew-Shot, que podem degradar a performance.
 
