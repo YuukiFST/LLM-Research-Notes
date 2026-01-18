@@ -706,5 +706,21 @@ The report's most significant contributions extend beyond the model itself:
 
 For the research community, DeepSeek-V3 provides a roadmap for cost-effective development of frontier models, proving that **economic constraints need not limit scientific ambition**. The detailed technical exposition, including ablation studies, failure modes (block-wise gradient quantization), and hardware recommendations, offers invaluable guidance for future large-scale model training efforts.
 
-The team's longtermism philosophy—investing in foundational research rather than short-term benchmark optimization—positions DeepSeek-V3 as both a state-of-the-art model and a pedagogical artifact for the broader AI community
+The team's longtermism philosophy—investing in foundational research rather than short-term benchmark optimization—positions DeepSeek-V3 as both a state-of-the-art model and a pedagogical artifact for the broader AI community.
 
+---
+
+## References
+
+- **Paper:** [arXiv:2412.19437v2](https://arxiv.org/abs/2412.19437) [cs.CL] 18 Feb 2025
+- **Code:** [github.com/deepseek-ai/DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3)
+- **Organization:** DeepSeek-AI (research@deepseek.com)
+- **Training Tokens:** 14.8T (pre-training) + 2K steps (context extension) + 1.5M instances (SFT)
+- **Model Scale:** 671B total parameters, 37B activated per token
+- **Training Cost:** $5.576M (2.788M H800 GPU hours at $2/hour)
+- **Training Infrastructure:** 2048 H800 GPUs, FP8 mixed precision, DualPipe algorithm
+- **Architecture:** MoE with Multi-head Latent Attention (MLA) + DeepSeekMoE
+- **Key Innovations:** Auxiliary-loss-free load balancing, FP8 training at 671B scale, Multi-Token Prediction, R1 distillation
+- **Evaluation:** 50+ benchmarks (MMLU, MATH-500, HumanEval, LiveCodeBench, Codeforces, SWE-bench, etc.)
+- **Release Date:** December 2024 (arXiv v1), February 2025 (arXiv v2)
+- **Related Work:** DeepSeek-V2 (arXiv:2405.04434), DeepSeek-R1 series
