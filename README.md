@@ -1,4 +1,4 @@
-This repository is a collection of article summaries and technical analyses created **by enthusiasts, for enthusiasts** interested in learning about large language models (LLMs) and AI systems [1](#1-0) .
+This repository is a collection of article summaries and technical analyses created **by enthusiasts, for enthusiasts** interested in learning about large language models (LLMs) and AI systems.
 
 ## Purpose
 
