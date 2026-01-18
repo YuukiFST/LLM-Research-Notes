@@ -60,43 +60,6 @@ Recursive Language Models represent a paradigm shift in how we approach long-con
 
 ---
 
-## Prompt Improvement Mode
-
-The document analyzed provides several specific heuristics regarding agent behavior, cost control, and prompt engineering (specifically in Section 3.1 and Appendix A). Therefore, the following prompt improvement is provided.
-
-### ORIGINAL PROMPT
-
-> **OPERATING ENVIRONMENT:**
-> * `context`: The full content of the file (may be extremely long).
-> * `print(...)`: For structural inspection and snippet extraction.
-> * `lm_query(prompt, context_snippet)`: For semantic analysis of specific excerpts.
->
-> **PRIMARY MISSION:**
-> Your task is to transform the content of the uploaded file into **High-Quality Technical Documentation** or an **Analytical Blog Post**...
->
-> **EXECUTION PROTOCOL (RLM-STYLE):**
-> A) **PROBE:** Use `print()` to map the structure...
-> B) **FILTER:** Locate key terms and critical sections...
-> C) **DECOMPOSE + SUBCALLS:** Use `lm_query()` to extract the technical meaning of complex sections...
-> D) **SYNTHESIZE:** Write the text...
-
-### IMPROVED VERSION
-
-> **OPERATING ENVIRONMENT:**
-> * `context`: The full content of the file (may be extremely long).
-> * `print(...)`: For structural inspection and snippet extraction.
-> * `lm_query(prompt, context_snippet)`: For semantic analysis of specific excerpts.
->
-> **PRIMARY MISSION:**
-> Your task is to transform the content of the uploaded file into **High-Quality Technical Documentation**...
->
-> **EXECUTION PROTOCOL (RLM-STYLE):**
-> A) **PROBE:** Use `print()` to map the structure (Abstract, Sections, Appendices).
-> B) **HEURISTIC FILTER:** Before calling `lm_query`, use code (regex, keyword search) on the `context` variable to locate high-relevance sections (e.g., "limitations", "results", "prompt engineering"). **Minimize direct string reading of large blocks.**
-> C) **COST-CONTROLLED DECOMPOSITION:** Use `lm_query()` sparingly. Prioritize calling it only on filtered, high-density snippets. Avoid recursive decomposition unless the snippet complexity exceeds your processing capacity.
-> D) **VERIFICATION:** Before finalizing the synthesis, run a code check to ensure all cited claims are present in the extracted variables.
-> E) **SYNTHESIZE:** Write the text...
-
 ### TECHNICAL JUSTIFICATIONS
 
 1.  **Heuristic Filtering Addition**:
